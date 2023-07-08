@@ -9,16 +9,6 @@ const gallery = document.querySelector('.gallery');
 const btnLoadMore = document.querySelector('.load-more');
 let gallerySimpleLightbox = new SimpleLightbox('.gallery a');
 
-// const { height: cardHeight } = document
-//   .querySelector('.gallery')
-//   .firstElementChild.getBoundingClientRect();
-
-// window.scrollBy({
-//   top: cardHeight * 2,
-
-//   behavior: 'smooth',
-// });
-
 btnLoadMore.style.display = 'none';
 
 let pageNumber = 1;
@@ -70,31 +60,22 @@ function renderImageList(images) {
     .map(image => {
       console.log('img', image);
       return `<div class="photo-card">
-
-       <a href="${image.largeImageURL}"><img class="photo" src="${image.webformatURL}" alt="${image.tags}" title="${image.tags}" loading="lazy"/></a>
-
-        <div class="info">
-           <p class="info-item">
-    <b>Likes</b> <span class="info-item-api"> ${image.likes} </span>
-</p>
-            <p class="info-item">
-                <b>Views</b> <span class="info-item-api">${image.views}</span>  
-            </p>
-            <p class="info-item">
-                <b>Comments</b> <span class="info-item-api">${image.comments}</span>  
-            </p>
-            <p class="info-item">
-                <b>Downloads</b> <span class="info-item-api">${image.downloads}</span> 
-            </p>
-        </div>
-    </div>`;
+              <a href="${image.largeImageURL}"><img class="photo" src="${image.webformatURL}" alt="${image.tags}" title="${image.tags}" loading="lazy"/></a>
+              <div class="info">
+                <p class="info-item"><b>Likes</b> <span class="info-item-api"> ${image.likes} </span></p>
+                <p class="info-item"><b>Views</b> <span class="info-item-api">${image.views}</span></p>
+                <p class="info-item"><b>Comments</b> <span class="info-item-api">${image.comments}</span>  
+                </p><p class="info-item"><b>Downloads</b> <span class="info-item-api">${image.downloads}</span></p>
+              </div>
+            </div>`;
     })
+
     .join('');
   gallery.innerHTML += markup;
-}
+};
 
 function cleanGallery() {
   gallery.innerHTML = '';
   pageNumber = 1;
   btnLoadMore.style.display = 'none';
-}
+};
