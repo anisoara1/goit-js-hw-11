@@ -70,7 +70,7 @@ body {
   align-content: center;
   align-items: center;
   padding: 0;
-  width: 336px;
+  width: 400px;
   box-shadow: 3px 3px 1px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-bottom: 3px; 
@@ -94,7 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  min-width: 336px;
+  min-width: 400px;
   font-size: 11px;
   background-color: rgba(203, 233, 242, 0.887);
 }
